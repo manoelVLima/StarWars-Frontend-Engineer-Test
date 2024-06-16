@@ -1,3 +1,4 @@
+import Link from "next/link";
 
 export default function NavigationBar() {
   return (
@@ -6,8 +7,8 @@ export default function NavigationBar() {
         <div className="flex items-center justify-between h-16">
           <div className="flex-1 flex items-center justify-center">
               <div className="flex gap-4">
-                <a href="#" className="text-white hover:text-yellow-500 px-3 py-1 rounded-md text-xl">Characters</a>
-                <a href="#" className="text-white hover:text-yellow-500 px-3 py-1 rounded-md text-xl">Planets</a>
+                <Link href="/characters" className="text-white hover:text-yellow-500 px-3 py-1 rounded-md text-xl">Characters</Link>
+                <Link href="/planets" className="text-white hover:text-yellow-500 px-3 py-1 rounded-md text-xl">Planets</Link>
               </div>
           </div>
         </div>

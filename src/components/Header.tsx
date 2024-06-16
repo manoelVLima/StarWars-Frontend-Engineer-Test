@@ -1,22 +1,7 @@
-import { characters } from "@/services/axios";
-import { useEffect } from "react";
-
 export default function Header() {
 
-    /*  useEffect(()=> {
-    async function teste() {
-      const getPlanets = await characters();
-
-      console.log(getPlanets);
-      
-    }
-     teste();
-    
-  },[])
-*/
-
   return (
-    <header id="main-title" className="flex max-h-1-screen flex-col gap-12 items-center justify-between p-20">
+    <header id="main-title" className="flex flex-col gap-12 items-center justify-between p-20">
     <h1 className="text-5xl text-center text-yellow-500">
       STAR WARS
     </h1>

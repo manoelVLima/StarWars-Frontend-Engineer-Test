@@ -19,6 +19,11 @@
     padding: 0;
 }
 
+#nav-bar {
+    font-family: 'StarJedi',sans-serif;
+    background-image: url('../../public/star-wars-bg.jpg'); 
+}
+
 #main-title {
     font-family: 'StarJedi',sans-serif;
     background-image: url('../../public/star-wars-bg.jpg');

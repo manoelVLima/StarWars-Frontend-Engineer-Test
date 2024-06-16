@@ -9,3 +9,9 @@ export async function planets () {
 
     return getPlanets;
 }
+
+export async function characters () {
+    const getCharacters = axios.get(`${baseURL}/api/people`);
+
+    return getCharacters;
+}

@@ -7,6 +7,12 @@
     src: url('./fonts/Starjedi.ttf');
 }
 
+@keyframes blink{
+    50% {
+        filter: brightness(0.4);
+    }
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -15,6 +21,11 @@
 
 #main-title {
     font-family: 'StarJedi',sans-serif;
-    color: yellow;
-    background-color: black;
+    background-image: url('../../public/star-wars-bg.jpg');
 }
+
+#second-title {
+    color: #6deaec;
+    animation: blink 2.5s linear infinite;
+}
+

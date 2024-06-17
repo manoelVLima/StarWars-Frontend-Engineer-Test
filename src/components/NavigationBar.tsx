@@ -7,8 +7,7 @@ export default function NavigationBar() {
         <div className="flex items-center justify-between h-16">
           <div className="flex-1 flex items-center justify-center">
               <div className="flex gap-4">
-                <Link href="/characters" className="text-white hover:text-yellow-500 px-3 py-1 rounded-md text-xl">Characters</Link>
-                <Link href="/planets" className="text-white hover:text-yellow-500 px-3 py-1 rounded-md text-xl">Planets</Link>
+                <Link href="/characters" className="text-white hover:text-yellow-500 px-3 py-1 rounded-md text-xl">All Characters</Link>
               </div>
           </div>
         </div>

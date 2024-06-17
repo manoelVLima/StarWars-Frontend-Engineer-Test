@@ -1,4 +1,4 @@
-export interface Person {
+export interface Character {
     name: string;
     height: string;
     mass: string;
@@ -17,7 +17,7 @@ export interface Person {
     url: string;
   }
   
-  export interface PeopleResponse {
-    results: Person[];
+  export interface CharacterResponse {
+    results: Character[];
   }
   

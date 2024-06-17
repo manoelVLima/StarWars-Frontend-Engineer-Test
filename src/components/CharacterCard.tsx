@@ -1,24 +1,35 @@
-import {  Person } from "@/interfaces/ICharacter";
-import { getApi } from "@/services/axios";
+import {  Character } from "@/interfaces/ICharacter";
+import { Planet } from "@/interfaces/IPlanet";
+import { api, getApi } from "@/services/requests";
 import { useQuery } from "@tanstack/react-query";
 
+
 interface ICharacterCardProps {
-  character: Person;
+  character: Character;
+  index: number;
 }
-export default function CharacterCard({character}:ICharacterCardProps) {
+
+export default function CharacterCard({ character, index }:ICharacterCardProps) {
 
   const { data:PlanetData, isLoading } = useQuery({ queryKey: ['getPlanet',character.name], queryFn: async () =>{
     const results = await getApi<Planet>(`${character.homeworld}`);
 
+
     return results;
-  }  })
+  }  }) 
 
   return (
-    <div className="bg-white rounded-lg shadow-md overflow-hidden">
-            <img className="w-full h-48 object-cover" src="https://picsum.photos/400/400" alt="Personagem 1" />
+    <div className="bg-white rounded-sm shadow-md overflow-hidden">
+            <img className="w-full h-48 object-cover" src="https://picsum.photos/300/300" alt="Characteragem 1" />
             <div className="p-4">
               <h2 className="text-xl font-bold mb-2">{character.name}</h2>
-              <p className="text-gray-700">{PlanetData?.name}</p>
+              <h3 className="text-gray-700 font-medium">{PlanetData?.name}</h3>
+              <div className="text-gray-400 pt-2 text-sm">
+                <p>HEIGHT - {character.height}</p>
+                <p>MASS - {character.mass}</p>
+                <p>GENDER - {character.gender}</p>
+              </div>
+            
             </div>
           </div>
   )

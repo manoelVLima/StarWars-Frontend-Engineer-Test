@@ -1,4 +1,4 @@
-interface Planet {
+export interface Planet {
     name: string;
     rotation_period: string;
     orbital_period: string;
@@ -15,6 +15,6 @@ interface Planet {
     url: string;
 }
 
-interface PlanetAPIResponse {
+export interface PlanetAPIResponse {
     results: Planet;
 }

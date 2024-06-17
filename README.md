@@ -40,4 +40,4 @@ Perguntar:
 
 - Precisa seguir exatamente o que está no figma ou podemos ficar mais livre pra fazer?
 - Perguntar sobre a paginação da página.
-- 
+- Perguntar sobre 

@@ -1,12 +1,15 @@
 import React from 'react';
 
 interface IFilterProps  {
-  options: { value: string; label: string }[];
   selectedValue: string;
   onChange: (value: string) => void;
 };
 
-export default function Filter ({ options, selectedValue, onChange }: IFilterProps)  {
+const filterOptions = [
+  { value: 'name', label: 'Name' },
+  { value: 'planet', label: 'HomeWorld' },
+]; 
+export default function Filter ({ selectedValue, onChange }: IFilterProps)  {
   return (
     <div className="relative inline-block w-64">
       <select
@@ -14,7 +17,7 @@ export default function Filter ({ options, selectedValue, onChange }: IFilterPro
         onChange={(e) => onChange(e.target.value)}
         className="block appearance-none w-full bg-white border border-gray-300 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline"
       >
-        {options.map((option) => (
+        {filterOptions.map((option) => (
           <option key={option.value} value={option.value}>
             {option.label}
           </option>

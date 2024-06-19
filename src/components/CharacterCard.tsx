@@ -19,7 +19,7 @@ export default function CharacterCard({ character, index }:ICharacterCardProps) 
 
   return (
     <div className="bg-white rounded-sm shadow-md overflow-hidden">
-            <img className="w-full h-48 object-cover" src="https://picsum.photos/300/300" alt={character.name} />
+            <img loading="lazy" className="w-full h-48 object-cover" src="https://picsum.photos/300/300" alt={character.name} />
             <div className="p-4">
               <h2 className="text-xl font-bold mb-2">{character.name}</h2>
               <h3 className="text-gray-700 font-medium">{PlanetData?.name}</h3>

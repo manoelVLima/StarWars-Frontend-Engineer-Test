@@ -19,7 +19,7 @@ export default function Pagination({ handlePageChange, currentPage = 1 }: IPagin
         <button
           type='button'
           onClick={() => handlePageChange(+currentPage + 1)}
-          className="px-4 py-2 bg-blue-500 text-white rounded"
+          className="px-4 py-2 bg-black text-white rounded"
           disabled={currentPage === 9}
         >
           Next

@@ -11,7 +11,7 @@ const filterOptions = [
 ]; 
 export default function Filter ({ selectedValue, onChange }: IFilterProps)  {
   return (
-    <div className="relative inline-block w-64">
+    <div className="w-full md:w-auto relative inline-block">
       <select
         value={selectedValue}
         onChange={(e) => onChange(e.target.value)}

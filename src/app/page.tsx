@@ -3,6 +3,7 @@ import CharacterCard from "@/components/CharacterCard";
 import Filter from "@/components/Filter";
 import Loading from "@/components/Loading";
 import Pagination from "@/components/Pagination";
+import SkeletonLoading from "@/components/SkeletonLoading";
 import TextInput from "@/components/TextInput";
 import { Character, CharacterResponse } from "@/interfaces/ICharacter";
 import { getApi } from "@/services/requests";
@@ -48,16 +49,22 @@ export default function Home() {
           return { ...character, planet: homeworld.name };
         })
       );      
+      console.log(charactersWithHomeworld);
       return charactersWithHomeworld;
     }
   });
-  const filteredList = listOfCharacters?.filter((character)=> character[selectedFilter as keyof Character]?.toLowerCase().includes(inputValue.toLowerCase()))  
+  const filteredList = listOfCharacters?.filter((character)=> character[selectedFilter as keyof Character]?.toLowerCase().includes(inputValue.toLowerCase()));
+  console.log(isLoading);
+  console.log(listOfCharacters);
+  
+  
   console.log(filteredList);
   
   return (
     <div className="mx-auto p-4">
       <div className="flex w-full justify-between pb-5">
       <div className="flex flex-col w-full gap-2 justify-start md:flex-row md:items-center">
+        <h1 className="font-medium">Filter By</h1>
         <Filter
           selectedValue={selectedFilter}
           onChange={handleSelectChange}
@@ -76,7 +83,7 @@ export default function Home() {
       </div>
       <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-4">
         {
-          isLoading ? <Loading /> :
+          isLoading ? Array.from({ length: 10 }).map((element, index)=> <SkeletonLoading key={index} />) :
           filteredList?.map((character,index)=>(
             <CharacterCard key={index} index={index} character={character}/>
           ))

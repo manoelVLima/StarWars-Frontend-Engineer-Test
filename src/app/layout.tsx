@@ -4,7 +4,6 @@ import "../styles/globals.css";
 import Header from "@/components/Header";
 import Providers from "@/components/Provider";
 
-
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -14,7 +13,6 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children
 }: Readonly<{
-  header: React.ReactNode;
   children: React.ReactNode;
 }>) {
   return (

@@ -3,12 +3,12 @@ import { Planet } from "@/interfaces/IPlanet";
 import { getApi } from "@/services/requests";
 import { useQuery } from "@tanstack/react-query";
 
-interface ICharacterCardProps {
+export interface ICharacterCardProps {
   character: Character;
   index: number;
 }
 
-export default function CharacterCard({ character, index }:ICharacterCardProps) {
+export default function CharacterCard({ character }:ICharacterCardProps) {
 
   const { data:PlanetData, isLoading } = useQuery({ queryKey: ['getPlanet',character.name], queryFn: async () =>{
     const results = await getApi<Planet>(`${character.homeworld}`);

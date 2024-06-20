@@ -5,14 +5,12 @@ import { useQuery } from "@tanstack/react-query";
 
 export interface ICharacterCardProps {
   character: Character;
-  index: number;
 }
 
 export default function CharacterCard({ character }:ICharacterCardProps) {
 
   const { data:PlanetData, isLoading } = useQuery({ queryKey: ['getPlanet',character.name], queryFn: async () =>{
     const results = await getApi<Planet>(`${character.homeworld}`);
-
 
     return results;
   }  }) 

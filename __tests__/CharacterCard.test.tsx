@@ -1,12 +1,15 @@
-import { ReactElement } from 'react';
 import { render, screen } from '@testing-library/react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import CharacterCard, { ICharacterCardProps } from '@/components/CharacterCard';
+import { getApi } from '@/services/requests';
+import { Planet } from '@/interfaces/IPlanet';
 import { mockCharacter } from '../__mocks__/Character.mock';
+import CharacterCard from '@/components/CharacterCard';
+
+jest.mock('@/services/requests');
 
 const queryClient = new QueryClient();
 
-const renderWithQueryClient = (ui: ReactElement) => {
+const renderWithQueryClient = (ui: React.ReactElement) => {
   return render(
     <QueryClientProvider client={queryClient}>
       {ui}
@@ -14,12 +17,19 @@ const renderWithQueryClient = (ui: ReactElement) => {
   );
 };
 
-const mockProps: ICharacterCardProps = {
-  character: mockCharacter,
-  index: 0,
-};
+describe('CharacterCard tests', () => {
+  test('renders Character Info and Planet Name correctly', async () => {
+    (getApi as jest.Mock).mockResolvedValueOnce({
+      name: 'Tatooine',
+    } as Planet);
 
-it('renders CharacterCard correctly', () => {
-  renderWithQueryClient(<CharacterCard {...mockProps} />);
-  expect(screen.getByText(mockCharacter.name)).toBeInTheDocument();
+    renderWithQueryClient(<CharacterCard character={mockCharacter} />);
+
+    expect(screen.getByText('Luke Skywalker')).toBeInTheDocument();
+    expect(screen.getByText('HEIGHT - 172')).toBeInTheDocument();
+    expect(screen.getByText('MASS - 77')).toBeInTheDocument();
+    expect(screen.getByText('GENDER - male')).toBeInTheDocument();
+
+    expect(await screen.findByText('Tatooine')).toBeInTheDocument();
+  });
 });

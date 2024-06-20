@@ -48,7 +48,6 @@ export default function MainPage() {
           return { ...character, planet: homeworld.name };
         })
       );      
-      console.log(charactersWithHomeworld);
       return charactersWithHomeworld;
     }
   });
@@ -77,7 +76,7 @@ export default function MainPage() {
       </div>
       <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-4">
         {
-          isLoading ? Array.from({ length: 10 }).map((element, index)=> <SkeletonLoading key={index} />) :
+          isLoading ? Array.from({ length: 10 }).map((element, index)=> <SkeletonLoading  key={index} />) :
           filteredList?.map((character,index)=>(
             <CharacterCard key={index} character={character}/>
           ))

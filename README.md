@@ -1,24 +1,28 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# StarWars App - Frontend Engineer Test
 
-## Getting Started
+This is a Frontend application built in Next.js to test the Frontend Engineer position at CloudWalk.
 
-First, run the development server:
+## Installation
+
+First thing to do is clone the repository, so in you terminal run the following code:
+
+```bash
+git clone https://github.com/manoelVLima/StarWars-Frontend-Engineer-Test.git
+cd StarWars-Frontend-Engineer-Test
+```
+
+After that you must download the project dependencies.
+
+```bash
+npm install
+```
+
+And you are free to run the Application:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
 ## Learn More
 

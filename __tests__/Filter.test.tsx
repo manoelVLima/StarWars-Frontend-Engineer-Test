@@ -1,7 +1,7 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import Filter from '@/components/Filter';
 
-describe('Filter Component', () => {
+describe('Filter Component tests', () => {
   const mockOnChange = jest.fn();
 
   beforeEach(() => {

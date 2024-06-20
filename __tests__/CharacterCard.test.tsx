@@ -17,7 +17,7 @@ const renderWithQueryClient = (ui: React.ReactElement) => {
   );
 };
 
-describe('CharacterCard tests', () => {
+describe('CharacterCard Component tests', () => {
   test('renders Character Info and Planet Name correctly', async () => {
     (getApi as jest.Mock).mockResolvedValueOnce({
       name: 'Tatooine',

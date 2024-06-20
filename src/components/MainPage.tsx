@@ -1,7 +1,6 @@
 'use client';
 import CharacterCard from "@/components/CharacterCard";
 import Filter from "@/components/Filter";
-import Loading from "@/components/Loading";
 import Pagination from "@/components/Pagination";
 import SkeletonLoading from "@/components/SkeletonLoading";
 import TextInput from "@/components/TextInput";
@@ -54,12 +53,6 @@ export default function MainPage() {
     }
   });
   const filteredList = listOfCharacters?.filter((character)=> character[selectedFilter as keyof Character]?.toLowerCase().includes(inputValue.toLowerCase()));
-  console.log(isLoading);
-  console.log(listOfCharacters);
-  
-  
-  console.log(filteredList);
-  
   return (
     <Suspense>
     <div className="mx-auto p-4">
@@ -86,7 +79,7 @@ export default function MainPage() {
         {
           isLoading ? Array.from({ length: 10 }).map((element, index)=> <SkeletonLoading key={index} />) :
           filteredList?.map((character,index)=>(
-            <CharacterCard key={index} index={index} character={character}/>
+            <CharacterCard key={index} character={character}/>
           ))
         }
       </div>

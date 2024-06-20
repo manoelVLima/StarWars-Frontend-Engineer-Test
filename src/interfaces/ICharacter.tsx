@@ -8,9 +8,6 @@ export interface Character {
     birth_year: string;
     gender: string;
     homeworld: string;
-    created: string;
-    edited: string;
-    url: string;
   }
   
   export interface CharacterResponse {

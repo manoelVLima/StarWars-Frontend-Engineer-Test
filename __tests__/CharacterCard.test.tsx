@@ -29,6 +29,7 @@ describe('CharacterCard tests', () => {
     expect(screen.getByText('HEIGHT - 172')).toBeInTheDocument();
     expect(screen.getByText('MASS - 77')).toBeInTheDocument();
     expect(screen.getByText('GENDER - male')).toBeInTheDocument();
+    expect(screen.getByRole('img')).toBeInTheDocument();
 
     expect(await screen.findByText('Tatooine')).toBeInTheDocument();
   });

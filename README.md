@@ -1,5 +1,7 @@
 # StarWars App - Frontend Engineer Test
 
+<details>
+    <summary> Read the documentation in English </summary>
 This is a Frontend application built in Next.js to test the Frontend Engineer position at CloudWalk.
 
 The application is online on the website: https://star-wars-frontend-engineer-test.vercel.app/
@@ -63,5 +65,5 @@ Well, I'm going to mention some improvements that could be made (if I had more t
 - Improve website pagination: unfortunately the API is a little limited and makes pagination a bit difficult. I would like to have done direct pagination, without changing pages, but this would require more requests and consequently affect the page's performance. I chose not to do it.
 - Implementation of new features: I wasn't able to implement so many ideas, I had more focus on the code itself. But I have some ideas in mind that could be put into practice, for example, a dedicated page for each character or even a modal to show the characteristics of each one.
 - filter robustness: The filter logic can be improved and can even reach the planets API, having a filter that integrates characters and planets. With the planets it would be really cool because it has a lot of numerical information.
-
+</details>
 ## Thank you for the opportunity, I hope you like it!

@@ -136,4 +136,5 @@ Bom, vou citar algumas melhorias que poderiam ser feitas (se eu tivesse mais tem
 - Implementação de novas funcionalidades: não consegui implementar tantas ideias, tive mais foco no código em si. Mas tenho algumas ideias em mente que poderiam ser colocadas em prática, por exemplo, uma página dedicada para cada personagem ou até mesmo um modal para mostrar as características de cada um.
 - Robustez do filtro: A lógica do filtro pode ser melhorada e pode até chegar à API de planetas, possuindo um filtro que integra personagens e planetas. Com os planetas seria muito legal porque tem muita informação numérica.
 
+## Obrigado pela oportunidade, espero que gostem!
 </details>

@@ -37,7 +37,7 @@ If you have any problems cloning the repository, you can also download the proje
 To run the tests in your terminal, run the code:
 
 ```bash
-npm run dev
+npm test / npm run test
 ```
 
 ![image](https://github.com/manoelVLima/StarWars-Frontend-Engineer-Test/blob/master/public/tests.png)
@@ -107,7 +107,7 @@ Se você tiver algum problema ao clonar o repositório, você também pode baixa
 Para executar os testes em seu terminal, digite o código:
 
 ```bash
-npm run dev
+npm test / npm run test
 ```
 
 ![image](https://github.com/manoelVLima/StarWars-Frontend-Engineer-Test/blob/master/public/tests.png)

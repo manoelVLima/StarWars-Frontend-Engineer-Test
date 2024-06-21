@@ -9,7 +9,13 @@ describe('TextInput Component', () => {
   });
 
   test('renders correctly with initial value', () => {
-    render(<TextInput value="test value" onChange={mockOnChange} placeholder="Enter text" />);
+    render(
+      <TextInput
+        value="test value"
+        onChange={mockOnChange}
+        placeholder="Enter text"
+      />
+    );
 
     const inputElement = screen.getByPlaceholderText('Enter text');
     expect(inputElement).toBeInTheDocument();
@@ -17,7 +23,9 @@ describe('TextInput Component', () => {
   });
 
   test('calls onChange when the value changes', () => {
-    render(<TextInput value="" onChange={mockOnChange} placeholder="Enter text" />);
+    render(
+      <TextInput value="" onChange={mockOnChange} placeholder="Enter text" />
+    );
 
     const inputElement = screen.getByPlaceholderText('Enter text');
     fireEvent.change(inputElement, { target: { value: 'new value' } });
@@ -39,9 +47,15 @@ describe('TextInput Component', () => {
       value = newValue;
     };
 
-    render(<TextInput value={value} onChange={handleChange} placeholder="Enter text" />);
+    render(
+      <TextInput
+        value={value}
+        onChange={handleChange}
+        placeholder="Enter text"
+      />
+    );
 
-    const inputElement = screen.getByRole('textbox')
+    const inputElement = screen.getByRole('textbox');
     fireEvent.change(inputElement, { target: { value: 'typed value' } });
 
     expect(value).toBe('typed value');

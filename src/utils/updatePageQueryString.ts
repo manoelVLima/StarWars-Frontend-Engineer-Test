@@ -1,5 +1,4 @@
-import { ReadonlyURLSearchParams } from "next/navigation";
-
+import { ReadonlyURLSearchParams } from 'next/navigation';
 
 const updatePageQueryString = (
   searchParams: ReadonlyURLSearchParams,

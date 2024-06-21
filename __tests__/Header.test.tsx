@@ -12,14 +12,9 @@ describe('Header Component tests', () => {
   test('renders subtitle correctly', () => {
     render(<Header />);
 
-    const subtitle = screen.getByText(/a long time ago in a galaxy far, far away/i);
+    const subtitle = screen.getByText(
+      /a long time ago in a galaxy far, far away/i
+    );
     expect(subtitle).toBeInTheDocument();
-  });
-
-  test('renders all characters link correctly', () => {
-    render(<Header />);
-
-    const allCharactersLink = screen.getByText(/all characters/i);
-    expect(allCharactersLink).toBeInTheDocument();
   });
 });

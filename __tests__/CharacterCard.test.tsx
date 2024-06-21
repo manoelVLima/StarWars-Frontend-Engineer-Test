@@ -11,19 +11,19 @@ const queryClient = new QueryClient();
 
 const renderWithQueryClient = (ui: React.ReactElement) => {
   return render(
-    <QueryClientProvider client={queryClient}>
-      {ui}
-    </QueryClientProvider>
+    <QueryClientProvider client={queryClient}>{ui}</QueryClientProvider>
   );
 };
 
 describe('CharacterCard Component tests', () => {
   test('renders Character Info and Planet Name correctly', async () => {
     (getApi as jest.Mock).mockResolvedValueOnce({
-      name: 'Tatooine',
+      name: 'Tatooine'
     } as Planet);
 
-    renderWithQueryClient(<CharacterCard character={mockCharacter} />);
+    renderWithQueryClient(
+      <CharacterCard index={0} character={mockCharacter} />
+    );
 
     expect(screen.getByText('Luke Skywalker')).toBeInTheDocument();
     expect(screen.getByText('HEIGHT - 172')).toBeInTheDocument();

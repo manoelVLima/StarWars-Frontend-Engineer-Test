@@ -31,15 +31,15 @@ describe('Filter Component tests', () => {
 
     const options = screen.getAllByRole('option');
     expect(options).toHaveLength(2);
-    
+
     const expectedOptions = [
-        { value: 'name', text: 'Name' },
-        { value: 'planet', text: 'HomeWorld' },
-      ];
-  
-      expectedOptions.forEach((option, index) => {
-        expect(options[index]).toHaveValue(option.value);
-        expect(options[index]).toHaveTextContent(option.text);
-      });
+      { value: 'name', text: 'Name' },
+      { value: 'planet', text: 'HomeWorld' }
+    ];
+
+    expectedOptions.forEach((option, index) => {
+      expect(options[index]).toHaveValue(option.value);
+      expect(options[index]).toHaveTextContent(option.text);
+    });
   });
 });

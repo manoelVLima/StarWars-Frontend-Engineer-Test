@@ -9,7 +9,9 @@ describe('Pagination Component test', () => {
   });
 
   test('renders Previous button disabled on first page', () => {
-    render(<Pagination handlePageChange={mockHandlePageChange} currentPage={1} />);
+    render(
+      <Pagination handlePageChange={mockHandlePageChange} currentPage={1} />
+    );
 
     const previousButton = screen.getByRole('button', { name: /previous/i });
     expect(previousButton).toBeInTheDocument();
@@ -17,7 +19,9 @@ describe('Pagination Component test', () => {
   });
 
   test('renders Next button enabled on first page', () => {
-    render(<Pagination handlePageChange={mockHandlePageChange} currentPage={1} />);
+    render(
+      <Pagination handlePageChange={mockHandlePageChange} currentPage={1} />
+    );
 
     const nextButton = screen.getByRole('button', { name: /next/i });
     expect(nextButton).toBeInTheDocument();
@@ -25,7 +29,9 @@ describe('Pagination Component test', () => {
   });
 
   test('calls handlePageChange with correct argument when Next is clicked', () => {
-    render(<Pagination handlePageChange={mockHandlePageChange} currentPage={1} />);
+    render(
+      <Pagination handlePageChange={mockHandlePageChange} currentPage={1} />
+    );
 
     const nextButton = screen.getByRole('button', { name: /next/i });
     fireEvent.click(nextButton);
@@ -35,7 +41,9 @@ describe('Pagination Component test', () => {
   });
 
   test('calls handlePageChange with correct argument when Previous is clicked', () => {
-    render(<Pagination handlePageChange={mockHandlePageChange} currentPage={2} />);
+    render(
+      <Pagination handlePageChange={mockHandlePageChange} currentPage={2} />
+    );
 
     const previousButton = screen.getByRole('button', { name: /previous/i });
     fireEvent.click(previousButton);
@@ -45,7 +53,9 @@ describe('Pagination Component test', () => {
   });
 
   test('renders Next button disabled on last page', () => {
-    render(<Pagination handlePageChange={mockHandlePageChange} currentPage={9} />);
+    render(
+      <Pagination handlePageChange={mockHandlePageChange} currentPage={9} />
+    );
 
     const nextButton = screen.getByRole('button', { name: /next/i });
     expect(nextButton).toBeInTheDocument();
@@ -53,7 +63,9 @@ describe('Pagination Component test', () => {
   });
 
   test('renders Previous button enabled on last page', () => {
-    render(<Pagination handlePageChange={mockHandlePageChange} currentPage={9} />);
+    render(
+      <Pagination handlePageChange={mockHandlePageChange} currentPage={9} />
+    );
 
     const previousButton = screen.getByRole('button', { name: /previous/i });
     expect(previousButton).toBeInTheDocument();

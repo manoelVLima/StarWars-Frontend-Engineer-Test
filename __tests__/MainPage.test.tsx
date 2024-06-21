@@ -1,45 +1,56 @@
 import React from 'react';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
-import '@testing-library/jest-dom';
 import MainPage from '@/components/MainPage';
 import { useQuery } from '@tanstack/react-query';
 import { useRouter, usePathname, useSearchParams } from 'next/navigation';
 
 jest.mock('@tanstack/react-query', () => ({
-  useQuery: jest.fn(),
+  useQuery: jest.fn()
 }));
 
 jest.mock('next/navigation', () => ({
   useRouter: jest.fn(),
   usePathname: jest.fn(),
-  useSearchParams: jest.fn(),
+  useSearchParams: jest.fn()
 }));
 
 const mockCharacters = [
-  { name: 'Luke Skywalker', homeworld: 'https://swapi.dev/api/planets/1/', height: '172', mass: '77', gender: 'male' },
-  { name: 'Darth Vader', homeworld: 'https://swapi.dev/api/planets/1/', height: '202', mass: '136', gender: 'male' },
+  {
+    name: 'Luke Skywalker',
+    homeworld: 'https://swapi.dev/api/planets/1/',
+    height: '172',
+    mass: '77',
+    gender: 'male'
+  },
+  {
+    name: 'Darth Vader',
+    homeworld: 'https://swapi.dev/api/planets/1/',
+    height: '202',
+    mass: '136',
+    gender: 'male'
+  }
 ];
 
 const mockGetApi = jest.fn();
 
 jest.mock('@/services/requests', () => ({
-  getApi: () => mockGetApi,
+  getApi: () => mockGetApi
 }));
 
 describe('MainPage Component test', () => {
   beforeEach(() => {
     (useQuery as jest.Mock).mockReturnValue({
       data: mockCharacters,
-      isLoading: false,
+      isLoading: false
     });
 
     (useRouter as jest.Mock).mockReturnValue({
-      replace: jest.fn(),
+      replace: jest.fn()
     });
 
     (usePathname as jest.Mock).mockReturnValue('/');
     (useSearchParams as jest.Mock).mockReturnValue({
-      get: jest.fn().mockReturnValue('1'),
+      get: jest.fn().mockReturnValue('1')
     });
   });
 
@@ -48,11 +59,11 @@ describe('MainPage Component test', () => {
 
     expect(screen.getByText('Filter By')).toBeInTheDocument();
     expect(screen.getByRole('textbox')).toBeInTheDocument();
-    expect(screen.getByText('Clear All')).toBeInTheDocument();
+    expect(screen.getByText('Clear')).toBeInTheDocument();
     expect(screen.getByText('Previous')).toBeInTheDocument();
     expect(screen.getByText('Next')).toBeInTheDocument();
 
-    mockCharacters.forEach(character => {
+    mockCharacters.forEach((character) => {
       expect(screen.getByText(character.name)).toBeInTheDocument();
     });
   });
@@ -72,7 +83,7 @@ describe('MainPage Component test', () => {
   test('handles pagination correctly', () => {
     const mockReplace = jest.fn();
     (useRouter as jest.Mock).mockReturnValue({
-      replace: mockReplace,
+      replace: mockReplace
     });
 
     render(<MainPage />);
@@ -86,7 +97,7 @@ describe('MainPage Component test', () => {
   test('displays loading skeletons when data is loading', () => {
     (useQuery as jest.Mock).mockReturnValue({
       data: [],
-      isLoading: true,
+      isLoading: true
     });
 
     render(<MainPage />);

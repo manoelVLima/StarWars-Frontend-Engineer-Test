@@ -1,13 +1,13 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "../styles/globals.css";
-import Header from "@/components/Header";
-import Providers from "@/components/Provider";
+import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
+import '../styles/globals.css';
+import Header from '@/components/Header';
+import Providers from '@/components/Provider';
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: "Star Wars Application"
+  title: 'Star Wars Application'
 };
 
 export default function RootLayout({
@@ -19,10 +19,10 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <Providers>
-        <Header/>
+          <Header />
           {children}
         </Providers>
-        </body>
+      </body>
     </html>
   );
 }

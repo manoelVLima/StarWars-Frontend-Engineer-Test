@@ -9,9 +9,9 @@ jest.mock('@/services/requests');
 
 const queryClient = new QueryClient();
 
-const renderWithQueryClient = (ui: React.ReactElement) => {
+const renderWithQueryClient = (children: React.ReactElement) => {
   return render(
-    <QueryClientProvider client={queryClient}>{ui}</QueryClientProvider>
+    <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
   );
 };
 

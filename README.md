@@ -37,7 +37,7 @@ To run the tests in your terminal, run the code:
 npm run dev
 ```
 
-![image](https://github.com/manoelVLima/StarWars-Frontend-Engineer-Test/public/tests.png)
+![image](https://github.com/manoelVLima/StarWars-Frontend-Engineer-Test/blob/master/public/tests.png)
 
 I used Jest and RTL were used for testing.  
 

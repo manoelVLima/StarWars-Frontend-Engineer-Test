@@ -12,7 +12,7 @@ The application is online on the website: https://star-wars-frontend-engineer-te
 First thing to do is clone the repository, so in you terminal run the following code:
 
 ```bash
-git clone https://github.com/manoelVLima/StarWars-Frontend-Engineer-Test.git
+git clone git@github.com:manoelVLima/StarWars-Frontend-Engineer-Test.git
 cd StarWars-Frontend-Engineer-Test
 ```
 
@@ -82,7 +82,7 @@ A aplicação está online em: https://star-wars-frontend-engineer-test.vercel.a
 A primeira coisa a se fazer é clonar o repositório, então no seu terminal execute o seguinte código:
 
 ```bash
-git clone https://github.com/manoelVLima/StarWars-Frontend-Engineer-Test.git
+git clone git@github.com:manoelVLima/StarWars-Frontend-Engineer-Test.git
 cd StarWars-Frontend-Engineer-Test
 ```
 

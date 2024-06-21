@@ -2,6 +2,8 @@
 
 <details>
     <summary> Read the documentation in English </summary>
+
+    
 This is a Frontend application built in Next.js to test the Frontend Engineer position at CloudWalk.
 
 The application is online on the website: https://star-wars-frontend-engineer-test.vercel.app/

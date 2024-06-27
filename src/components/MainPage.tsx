@@ -29,6 +29,7 @@ export default function MainPage() {
   const handleInputChange = (value: string) => {
     setInputValue(value);
   };
+  console.log(searchParams);
 
   const handleUpdatePage = (page: number | null | string) => {
     const newUrl = updatePageQueryString(searchParams, pathname, page);

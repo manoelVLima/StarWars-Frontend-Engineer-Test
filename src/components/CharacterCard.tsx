@@ -22,7 +22,7 @@ export default function CharacterCard({ character }: ICharacterCardProps) {
     <div className="bg-white rounded-sm shadow-md overflow-hidden">
       <img //sadly the API does not allow me to use Image from Next
         loading="lazy"
-        className="w-full h-48 object-cover"
+        className="w-full h-48"
         src={`https://picsum.photos/300/300?random=${character.name}`}
         alt={character.name}
       />
